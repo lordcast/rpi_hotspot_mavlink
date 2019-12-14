@@ -147,6 +147,8 @@ cd mavlink-router
 git submodule update --init --recursive
 
 ./autogen.sh && ./configure CFLAGS='-g -O2' --sysconfdir=/etc --localstatedir=/var --libdir=/usr/lib64 --prefix=/usr
+sudo pip3 install future
+
 sudo make install
 
 echo "Making service of mavlink-router" 
