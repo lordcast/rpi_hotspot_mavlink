@@ -1,13 +1,6 @@
 #!/bin/bash
 
-#install autohotspot from raspberrypiconnect.com
-#http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
-#This version will provide internet when using the hotspot IF an ethernet cable is plugged in"
-#This will be useful with AREDN mesh networking
-#This script is for Buster ONLY
-#Stretch users should use https://github.com/km4ack/pi-scripts/blob/master/autohotspotN-setup
-#km4ack 20190923
-
+#shashi install
 #update packages
 echo "Need to switch the user to root, can we go ahead?"
 read -p "Is this correct? y/n " switchroot
