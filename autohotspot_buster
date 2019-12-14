@@ -142,7 +142,7 @@ sudo apt-get install autoconf automake pkg-config libgtk-3-dev libtool git
 
 echo "Creating mavlink-router folder and cloning repo"
 sudo git clone https://github.com/intel/mavlink-router.git
-sudo cd mavlink-router
+cd mavlink-router
 git submodule update --init --recursive
 
 ./autogen.sh && ./configure CFLAGS='-g -O2' --sysconfdir=/etc --localstatedir=/var --libdir=/usr/lib64 --prefix=/usr
