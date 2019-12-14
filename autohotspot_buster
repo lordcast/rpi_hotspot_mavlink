@@ -151,8 +151,6 @@ echo "}" >> /etc/wpa_supplicant/wpa_supplicant.conf
 
 echo;echo;echo
 echo "A reboot is required to complete the setup"
-echo "Wifi/AutoHotSpot will not work until reboot"
-echo "Ignore this IF you are using the EES quickinstall"
 
 echo "Now installing mavlink-router and there dependencies"
 sudo apt-get install autoconf automake pkg-config libgtk-3-dev libtool
@@ -181,6 +179,14 @@ sudo systemctl enable mavlink-router.service
 echo "Starting the service of mavlink-router"
 sudo systemctl enable mavlink-router.service
 
+echo "Router will not work until reboot, reboot now? y/n"
+read rebootnow
+if [rebootnow == "y"]
+then
+sudo reboot
+else
+echo "Reboot required until the changes will not take be implemented"
+exit 0
 
 
 
