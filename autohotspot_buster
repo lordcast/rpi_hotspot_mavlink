@@ -187,17 +187,3 @@ sudo reboot
 else
 echo "Reboot required until the changes will not take be implemented"
 exit 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
