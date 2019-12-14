@@ -46,7 +46,7 @@ wifipass
 
 cd $HOME/temp
 
-wget http://www.raspberryconnect.com/images/Autohotspot/autohotspot-95-4/hostapd.txt
+wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/hostapd.txt
 
 #set new hotspot passwd
 sed -i "s/wpa_passphrase=1234567890/wpa_passphrase=$wifipasswd/" $HOME/temp/hostapd.txt
@@ -83,7 +83,7 @@ sed 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf
 
 cd $HOME/temp
 
-wget http://www.raspberryconnect.com/images/autohotspotN/autohotspotn-95-4/autohotspot-service.txt
+wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/autohotspot-service.txt
 
 #create autohotspot service file
 mv autohotspot-service.txt /etc/systemd/system/autohotspot.service
@@ -101,7 +101,7 @@ fi
 
 #install autohotspot script
 cd $HOME/temp
-wget http://www.raspberryconnect.com/images/autohotspotN/autohotspotn-95-4/autohotspotN.txt
+wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/autohotspotN.txt
 #mod ip address for our custom setup
 sed -i 's/192.168.50.5/10.10.10.10/' autohotspotN.txt
 mv autohotspotN.txt /usr/bin/autohotspotN
