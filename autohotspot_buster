@@ -2,7 +2,7 @@
 
 #shashi install
 #update packages
-echo "Need to switch the user to root else some of the dependencies will not be installed properly, can we go ahead"
+echo "Warning! Need to switch the user to root else some of the dependencies will not be installed properly"
 apt-get update
 
 #install hostapd, dnsmasq
