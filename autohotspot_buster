@@ -2,15 +2,7 @@
 
 #shashi install
 #update packages
-echo "Need to switch the user to root, can we go ahead?"
-read -p "Is this correct? y/n " switchroot
-if [$switchroot == "y"]
-then
-echo
-else
-echo "Cannot continue with the root user access, exit shell.."
-exit 0
-sudo su
+echo "Need to switch the user to root else some of the dependencies will not be installed properly, can we go ahead"
 apt-get update
 
 #install hostapd, dnsmasq
