@@ -138,7 +138,7 @@ echo;echo;echo
 echo "A reboot is required to complete the setup"
 
 echo "Now installing mavlink-router and there dependencies"
-sudo apt-get install autoconf automake pkg-config libgtk-3-dev libtool
+sudo apt-get install autoconf automake pkg-config libgtk-3-dev libtool git
 
 echo "Creating mavlink-router folder and cloning repo"
 sudo git clone https://github.com/intel/mavlink-router.git
