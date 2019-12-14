@@ -1,0 +1,15 @@
+[Unit]
+Description=Mavlink Router
+After=network.target
+
+[Service]
+ExecStart=mavlink-routerd
+StandardOutput=inherit
+StandardError=inherit
+LimitNOFILE=infinity
+KillMode=mixed
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

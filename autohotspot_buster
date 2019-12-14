@@ -9,6 +9,15 @@
 #km4ack 20190923
 
 #update packages
+echo "Need to switch the user to root, can we go ahead?"
+read -p "Is this correct? y/n " switchroot
+if [$switchroot == "y"]
+then
+echo
+else
+echo "Cannot continue with the root user access, exit shell.."
+exit 0
+sudo su
 apt-get update
 
 #install hostapd, dnsmasq
@@ -50,7 +59,7 @@ wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/hosta
 
 #set new hotspot passwd
 sed -i "s/wpa_passphrase=1234567890/wpa_passphrase=$wifipasswd/" $HOME/temp/hostapd.txt
-#set country to US
+#set country to IN
 sed -i 's/country_code=GB/country_code=US/' $HOME/temp/hostapd.txt
 
 #move hostapd to correct location
@@ -144,3 +153,27 @@ echo;echo;echo
 echo "A reboot is required to complete the setup"
 echo "Wifi/AutoHotSpot will not work until reboot"
 echo "Ignore this IF you are using the EES quickinstall"
+
+echo "Now installing mavlink-router and there dependencies"
+sudo apt-get install autoconf automake pkg-config libgtk-3-dev libtool
+
+echo "Creating mavlink-router folder and cloning repo"
+sudo git clone https://github.com/intel/mavlink-router.git
+sudo mkdir mavlink-router
+sudo cd mavlink-router
+git submodule update --init --recursive
+
+./autogen.sh && ./configure CFLAGS='-g -O2' --sysconfdir=/etc --localstatedir=/var --libdir=/usr/lib64 --prefix=/usr
+sudo make install
+
+echo "Making service of mavlink-router" 
+
+
+
+
+
+
+
+
+
+
