@@ -8,7 +8,7 @@ StandardOutput=inherit
 StandardError=inherit
 LimitNOFILE=infinity
 KillMode=mixed
-Restart=on-failure
+Restart=always
 RestartSec=5s
 
 [Install]

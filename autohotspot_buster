@@ -155,17 +155,14 @@ sudo make install
 echo "Making service of mavlink-router" 
 
 wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/main.conf
-wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/mavlink-router.service
+wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/mavlink-router.txt
 
 sudo mkdir /etc/mavlink-router
 sudo mv main.conf /etc/mavlink-router/main.conf
-sudo mv mavlink-router.service /etc/systemd/system/mavlink-router.service
+sudo mv mavlink-router.txt /etc/systemd/system/mavlink-router.service
 
 echo "Enabling the service mavlink-router"
-sudo systemctl enable mavlink-router.service
-
-echo "Starting the service of mavlink-router"
-sudo systemctl start mavlink-router
+systemctl enable mavlink-router.service
 
 echo "Router will not work until reboot, reboot now? y/n"
 read rebootnow
