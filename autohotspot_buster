@@ -164,7 +164,7 @@ echo "Enabling the service mavlink-router"
 sudo systemctl enable mavlink-router.service
 
 echo "Starting the service of mavlink-router"
-sudo systemctl start mavlink-router.service
+sudo systemctl start mavlink-router
 
 echo "Router will not work until reboot, reboot now? y/n"
 read rebootnow
