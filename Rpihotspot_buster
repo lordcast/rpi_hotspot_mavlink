@@ -98,7 +98,7 @@ cd $HOME/temp
 wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/RpihotspotN.txt
 #mod ip address for our custom setup
 sed -i 's/192.168.50.5/10.10.10.10/' RpihotspotN.txt
-mv autohotspotN.txt /usr/bin/RpihotspotN
+mv RpihotspotN.txt /usr/bin/RpihotspotN
 chmod +x /usr/bin/RpihotspotN
 
 #shackwifi function
