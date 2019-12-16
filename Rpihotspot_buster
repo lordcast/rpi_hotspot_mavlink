@@ -77,13 +77,13 @@ sed 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf
 
 cd $HOME/temp
 
-wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/autohotspot-service.txt
+wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/Rpihotspot-service.txt
 
 #create autohotspot service file
-mv autohotspot-service.txt /etc/systemd/system/autohotspot.service
+mv Rpihotspot-service.txt /etc/systemd/system/Rpihotspot.service
 
 #start autohotspot service
-systemctl enable autohotspot.service
+systemctl enable Rpihotspot.service
 
 #check if iw installed. install if not
 
@@ -95,11 +95,11 @@ fi
 
 #install autohotspot script
 cd $HOME/temp
-wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/autohotspotN.txt
+wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/RpihotspotN.txt
 #mod ip address for our custom setup
-sed -i 's/192.168.50.5/10.10.10.10/' autohotspotN.txt
-mv autohotspotN.txt /usr/bin/autohotspotN
-chmod +x /usr/bin/autohotspotN
+sed -i 's/192.168.50.5/10.10.10.10/' RpihotspotN.txt
+mv autohotspotN.txt /usr/bin/RpihotspotN
+chmod +x /usr/bin/RpihotspotN
 
 #shackwifi function
 shackwifi1 () {
