@@ -1,7 +1,7 @@
 #!/bin/bash
 #version 0.95-41-N/HS-I
 
-#You may share this script on the condition a reference to RaspberryConnect.com 
+#You may share this script on the condition a reference to RaspberryConnect.com.
 #must be included in copies or derivatives of this script. 
 
 #A script to switch between a wifi network and an Internet routed Hotspot
