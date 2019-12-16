@@ -4,6 +4,6 @@ After=multi-user.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/autohotspotN
+ExecStart=/usr/bin/RpihotspotN
 [Install]
 WantedBy=multi-user.target
