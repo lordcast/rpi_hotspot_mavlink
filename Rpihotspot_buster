@@ -162,6 +162,9 @@ sudo mv mavlink-router.txt /etc/systemd/system/mavlink-router.service
 echo "Enabling the service mavlink-router"
 systemctl enable mavlink-router.service
 
+echo "Get path of URAT"
+wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/find_port.py
+
 echo "Router will not work until reboot, reboot now? y/n"
 read rebootnow
 if [rebootnow == "y"]
