@@ -1,3 +1,5 @@
+import os,glob, fnmatch
+
 preferred_ports = [
     '*FTDI*',
     "*Arduino_Mega_2560*",
@@ -9,6 +11,21 @@ preferred_ports = [
     '*Holybro_*',
     '*mRo*',
     '*FMU*']
+
+class SerialPort(object):
+    '''auto-detected serial port'''
+    def __init__(self, device, description=None, hwid=None):
+        self.device = device
+        self.description = description
+        self.hwid = hwid
+
+    def __str__(self):
+        ret = self.device
+        if self.description is not None:
+            ret += " : " + self.description
+        if self.hwid is not None:
+            ret += " : " + self.hwid
+        return ret
 
 def auto_detect_serial_win32(preferred_list=['*']):
     '''try to auto-detect serial ports on win32'''
@@ -34,9 +51,8 @@ def auto_detect_serial_win32(preferred_list=['*']):
     # now the rest
     ret.extend(others)
     return ret
-        
 
-        
+
 
 def auto_detect_serial_unix(preferred_list=['*']):
     '''try to auto-detect serial ports on unix'''
@@ -67,5 +83,11 @@ def auto_detect_serial(preferred_list=['*']):
     return auto_detect_serial_unix(preferred_list=preferred_list)
 
 
-get_port = auto_detect_serial(preferred_list=preferred_ports)
-print(get_port)
+def complete_serial_ports():
+    '''return list of serial ports'''
+    ports = auto_detect_serial(preferred_list=preferred_ports)
+    for p in ports:
+        print(p.device)		
+
+
+complete_serial_ports()
