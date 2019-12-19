@@ -1,3 +1,15 @@
+preferred_ports = [
+    '*FTDI*',
+    "*Arduino_Mega_2560*",
+    "*3D*",
+    "*USB_to_UART*",
+    '*Ardu*',
+    '*PX4*',
+    '*Hex_*',
+    '*Holybro_*',
+    '*mRo*',
+    '*FMU*']
+
 def auto_detect_serial_win32(preferred_list=['*']):
     '''try to auto-detect serial ports on win32'''
     try:
@@ -53,3 +65,7 @@ def auto_detect_serial(preferred_list=['*']):
     if os.name == 'nt':
         return auto_detect_serial_win32(preferred_list=preferred_list)
     return auto_detect_serial_unix(preferred_list=preferred_list)
+
+
+get_port = auto_detect_serial(preferred_list=preferred_ports)
+print(get_port)
