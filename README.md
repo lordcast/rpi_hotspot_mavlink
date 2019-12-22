@@ -9,7 +9,7 @@ wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/Rpiho
 sudo chmod +x Rpihotspot_buster  
 sudo ./Rpihotspot_buster
 
-Next you have change the Raspberry Pi configuraation if you are using GPIO for telementry connection, else ignore this and just run the find_port.py file to get the port aurdopoilot connected to.  
+Next you have to change the Raspberry Pi configuration if you are using GPIO for telementry connection, else ignore this and just run the find_port.py file to get the port aurdopoilot connected to.  
   
 sudo raspi-config  
 select interface options > serial > select no > select yes > finish  
