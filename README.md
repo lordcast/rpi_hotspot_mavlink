@@ -15,7 +15,7 @@ sudo raspi-config
 select interface options > serial > select no > select yes > finish  
 sudo reboot  
 
-run the find_port.py which will provid the port which has to be update in main.conf file under URAT > Device
+run the find_port.py which will provid the port which has to be update in /etc/mavlink-router/main.conf file under URAT > Device
 
 
 
