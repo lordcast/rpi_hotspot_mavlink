@@ -167,7 +167,7 @@ wget https://raw.githubusercontent.com/lordcast/rpi_hotspot_mavlink/master/find_
 
 echo "Router will not work until reboot, reboot now? y/n"
 read rebootnow
-if [rebootnow == "y"]
+if [$rebootnow == "y"]
 then
 sudo reboot
 else
